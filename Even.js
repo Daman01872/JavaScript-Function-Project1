@@ -1,71 +1,63 @@
 //Write a program that prints even numbers from 1 to 100 in descending order.//
 
-function  evenDescendingNumber() {
-let number =input_number.value;
-let count = 0;
-let arr =[];
-for (let i =0 ; i<= number; i++){
-    if(i%2===0){
-        arr[count] = i;
-        count++;
+function  evenDescendingNumber(number) {
+    for(i=100; i>=2; i--) {
+        if(i%2 == 0) {
+            console.log(i)
+        }
     }
+    return number;
 }
-output.innerHTML = arr.reverse();
-}
+console.log( evenDescendingNumber(" All above are the Even number's"))
+
 
 //Write a function which accepts list of country names as parameter and returns the longest country name as output.//
 
-function longname() {
-let names = input_text.value;
-names = names.split(/\s+/);
-let islong = 0;
-let longest;
-let array_size = names.length;
-console.log(names);
-for (let i = 0; i < array_size; i++) 
-{
-    if(names[i].length > islong){
-        islong = names[i].length;
-        longest = names[i];
-    }
-}
-output.innerHTML = longest;
-cpnsole.log("The Longest Name is ==>", longest)
-}
+function Longest_Country_Name(country_name)  
+  {  
+  return country_name.reduce(function(lname, country)   
+  {  
+    return lname.length > country.length ? lname : country;  
+  },   
+"");  
+}  
+console.log(Longest_Country_Name(["Australia", "Afghanistan", "United States of America"]));
+
 
 //Write a function which accept a number and reverse a number as output.//
 
-function reverseNumber() {
-    let number = input_number.value;
-    let splitted = number.split("");
-    let reversedArray = splitted.reverse();
-    let reversedString = reversedArray.join("");
-    output.innerHTML = reversedString;
-    console.log("The number After Reverse is ==> ");
+function reverse_a_number(n)
+{
+	n = n + "";
+	return n.split("").reverse().join("");
 }
+console.log(reverse_a_number(9826741));
 
 //Write a function to accept a number as parameter and return false or true based on weather the number is prime or not.//
 
-function isPrime() {
-    let number = input_number.value;
-    if (number == 2) {
-        output.innerHTML = true;
-        console.log('is number', number, 'prime==>');
-        { {
-                for (let i = 2; i < number; i++) {
-                    if (number % i === 0) {
-                        output.innerHTML = false;
-                        console.log('is number', number, 'prime==>');
-                        break;
-            
-                    }
-                    else 
-                    {
-                        output.innerHTML = true;
-                        console.log('is number', number, 'prime==>');
-                        break;
-                    }
-                }
-            }
-        }}}
+function test_prime(n)
+{
+
+  if (n==1)
+  {
+    return false;
+  }
+  else if(n == 2)
+  {
+    return true;
+  }else
+  {
+    for(var i = 2; i < n; i++)
+    {
+      if(n % i == 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+}
+
+console.log(test_prime(59));
+
 
